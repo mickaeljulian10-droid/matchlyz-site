@@ -7,7 +7,7 @@
 <meta name="description" content="MatchLyz : taggez vos matchs, suivez les joueurs par IA, sortez vos stats et montez vos séquences. Application Mac & Windows. La qualité pro à 9,90 €/mois.">
 <link rel="icon" href="https://raw.githubusercontent.com/mickaeljulian10-droid/matchlyz-app/main/BANDEAU%20MATCHLYZ.png">
 <style>
-  :root{--bg:#080b0a;--card:#0e1512;--line:#1c2b25;--green:#12E58A;--txt:#eaf3ef;--mut:#9fb4ab}
+  :root{--bg:#080b0a;--card:#0e1512;--line:#1c2b25;--green:#12E58A;--green2:#00e08f;--txt:#eaf3ef;--mut:#9fb4ab}
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--txt);font-family:'Montserrat',-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
@@ -24,6 +24,7 @@
   .nav .links a:hover{color:var(--txt)}
   .hidem{display:inline}
   @media(max-width:720px){.hidem{display:none}}
+  /* hero */
   .hero{text-align:center;padding:66px 0 40px;position:relative;overflow:hidden}
   .hero::before{content:"";position:absolute;inset:-40% 20% auto;height:520px;background:radial-gradient(closest-side,rgba(18,229,138,.16),transparent);filter:blur(30px);z-index:0}
   .hero>*{position:relative;z-index:1}
@@ -34,6 +35,7 @@
   .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .os{margin-top:16px;color:var(--mut);font-size:13px}
   .banner{margin:44px auto 0;max-width:760px;width:100%;border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  /* allin */
   .allin{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;background:rgba(18,229,138,.08);border:1px solid rgba(18,229,138,.3);color:var(--green);font-weight:800;font-size:14px;padding:12px 18px;border-radius:14px;max-width:760px;margin:26px auto 0}
   section{padding:58px 0}
   .h2{font-size:clamp(24px,3.6vw,36px);font-weight:900;text-align:center;letter-spacing:-.4px}
@@ -44,6 +46,7 @@
   .feat .ic{width:44px;height:44px;border-radius:12px;background:rgba(18,229,138,.12);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
   .feat h3{font-size:18px;margin-bottom:8px}
   .feat p{color:var(--mut);font-size:14.5px}
+  /* pricing */
   .toggle{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px;margin:22px auto 0;gap:4px}
   .toggle button{border:0;background:transparent;color:var(--mut);font-weight:800;padding:10px 22px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:15px}
   .toggle button.on{background:var(--green);color:#04140d}
@@ -62,6 +65,7 @@
   .plan li{padding:7px 0;font-size:14.5px;color:#d7e6df;display:flex;gap:10px;align-items:flex-start}
   .plan li::before{content:"✓";color:var(--green);font-weight:900}
   .plan .btn{width:100%}
+  /* faq */
   .rv{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:2px 20px;margin:12px auto;max-width:760px}
   .rv summary{cursor:pointer;font-weight:800;padding:16px 0;list-style:none}
   .rv summary::-webkit-details-marker{display:none}
@@ -76,10 +80,12 @@
   <div class="links">
     <a class="hidem" href="#fonctionnalites">Fonctionnalités</a>
     <a class="hidem" href="#tarifs">Tarifs</a>
+    <a class="hidem" href="#download">Télécharger</a>
     <a class="hidem" href="#faq">FAQ</a>
-    <a class="btn btn-green" style="padding:10px 18px;font-size:14px" href="#tarifs">Commencer</a>
+    <a class="btn btn-green" style="padding:10px 18px;font-size:14px" href="#download">Télécharger</a>
   </div>
 </div></header>
+
 <div class="hero"><div class="wrap">
   <span class="pill">🎯 Analyse vidéo · Suivi IA · Montage</span>
   <h1>La qualité <span class="g">pro</span> de l'analyse vidéo,<br>à prix <span class="g">amateur</span>.</h1>
@@ -92,18 +98,20 @@
   <img class="banner" src="https://raw.githubusercontent.com/mickaeljulian10-droid/matchlyz-app/main/BANDEAU%20MATCHLYZ.png" alt="MatchLyz">
   <div class="allin">✅ Tout inclus — aucune option cachée, aucun supplément.</div>
 </div></div>
+
 <section id="fonctionnalites"><div class="wrap">
   <div class="h2">Tout ce qu'il faut pour analyser comme un pro</div>
   <p class="lead">Une seule application, du terrain au montage final.</p>
   <div class="grid">
     <div class="feat"><div class="ic">🏷️</div><h3>Tagging en direct</h3><p>Marquez les actions clés pendant ou après le match, avec vos propres catégories et raccourcis.</p></div>
-    <div class="feat"><div class="ic">🤖</div><h3>Suivi IA des joueurs</h3><p>Le joueur est suivi automatiquement à l'écran. Calibrage terrain manuel pour une précision parfaite.</p></div>
+    <div class="feat"><div class="ic">🤖</div><h3>Suivi IA des joueurs</h3><p>Le joueur est suivi automatiquement à l'écran. Calibrage terrain manuel possible pour une précision parfaite.</p></div>
     <div class="feat"><div class="ic">📐</div><h3>Terrain tactique</h3><p>Flèches, zones, courses, ronds animés — illustrez le placement et les intentions de jeu.</p></div>
     <div class="feat"><div class="ic">📊</div><h3>Statistiques</h3><p>Sortez des rapports clairs et exploitables, prêts à partager avec le staff ou le joueur.</p></div>
     <div class="feat"><div class="ic">🎬</div><h3>Montage &amp; export</h3><p>Assemblez vos séquences, ajoutez texte et voix off, et exportez une vidéo propre en quelques clics.</p></div>
     <div class="feat"><div class="ic">🎙️</div><h3>Voix &amp; commentaires</h3><p>Enregistrez votre analyse à la voix directement sur chaque action, et téléchargez le clip.</p></div>
   </div>
 </div></section>
+
 <section id="tarifs" style="background:linear-gradient(180deg,rgba(18,229,138,.04),transparent)"><div class="wrap" style="text-align:center">
   <div class="h2">Un prix simple, tout inclus</div>
   <p class="lead">La même application, sans engagement. Essaie 15 jours gratuitement.</p>
@@ -117,7 +125,7 @@
       <div class="price"><span>0 €</span></div>
       <div class="cyc">15 jours, sans carte bancaire</div>
       <ul><li>Toutes les fonctionnalités</li><li>1 e-mail = 1 ordinateur</li><li>Aucun engagement</li></ul>
-      <a class="btn btn-ghost" href="#faq">Comment ça marche ?</a>
+      <a class="btn btn-ghost" href="#download">Télécharger l'app</a>
     </div>
     <div class="plan pop">
       <div class="badge">POPULAIRE</div>
@@ -130,20 +138,42 @@
   </div>
   <p class="lead" style="margin-top:22px;font-size:13px">Après paiement, tu reçois ton code d'activation par e-mail. Tu le colles dans l'application, et c'est parti.</p>
 </div></section>
+
+<section id="download" style="border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(18,229,138,.04),transparent)"><div class="wrap" style="text-align:center">
+  <span class="pill">⬇️ Téléchargement</span>
+  <div class="h2" style="margin-top:16px">Télécharge MatchLyz</div>
+  <p class="lead">Installe l'application sur ton ordinateur, puis lance ton essai gratuit de 15 jours — ou colle ton code d'abonnement.</p>
+  <div class="cta" style="margin-top:26px">
+    <a class="btn btn-green" href="https://github.com/mickaeljulian10-droid/matchlyz-app/releases/latest/download/MatchLyz-Windows.zip">Télécharger pour Windows</a>
+    <a class="btn btn-green" href="https://github.com/mickaeljulian10-droid/matchlyz-app/releases/latest/download/MatchLyz-Mac.zip">Télécharger pour Mac</a>
+  </div>
+  <p class="lead" style="margin-top:16px;font-size:13px">Fichier volumineux (modèles d'analyse IA inclus). À la première installation, l'app finalise l'installation automatiquement — compte quelques minutes et une connexion internet.</p>
+  <div style="max-width:760px;margin:26px auto 0;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px">
+    <b style="color:var(--green)">Installation en 3 étapes</b>
+    <ol style="color:var(--mut);font-size:14.5px;margin:12px 0 0;padding-left:20px;line-height:1.9">
+      <li>Décompresse le fichier téléchargé.</li>
+      <li>Double-clique sur <b>Installer MatchLyz</b> et laisse l'installation se faire.</li>
+      <li>Ouvre MatchLyz, entre ton e-mail (essai 15 jours) ou colle ton code d'activation.</li>
+    </ol>
+  </div>
+</div></section>
+
 <section id="faq"><div class="wrap">
   <div class="h2">Questions fréquentes</div>
   <div style="margin-top:26px">
-    <details class="rv"><summary>Comment fonctionne l'essai gratuit ?</summary><p>Tu télécharges MatchLyz, tu ouvres l'application et tu entres ton e-mail : 15 jours gratuits sont débloqués sur ton ordinateur. Un essai = un e-mail + un ordinateur.</p></details>
-    <details class="rv"><summary>Comment j'active mon abonnement ?</summary><p>Après ton paiement, tu reçois un code d'activation par e-mail. Ouvre MatchLyz, colle le code dans l'écran d'accueil, clique sur « Activer ».</p></details>
-    <details class="rv"><summary>Quelle différence entre mensuel et annuel ?</summary><p>C'est la même application. L'abonnement annuel revient moins cher (2 mois offerts) et se règle en une fois par an.</p></details>
+    <details class="rv"><summary>Comment fonctionne l'essai gratuit ?</summary><p><a href="#download" style="color:var(--green)">Tu télécharges MatchLyz</a>, tu ouvres l'application et tu entres ton e-mail : 15 jours gratuits sont débloqués sur ton ordinateur. Un essai = un e-mail + un ordinateur.</p></details>
+    <details class="rv"><summary>Comment j'active mon abonnement ?</summary><p>Après ton paiement, tu reçois un code d'activation par e-mail. Ouvre MatchLyz, colle le code dans l'écran d'accueil, clique sur « Activer » — et tu as accès à tout.</p></details>
+    <details class="rv"><summary>Quelle différence entre mensuel et annuel ?</summary><p>C'est la même application. L'abonnement annuel revient moins cher (l'équivalent de 2 mois offerts) et se règle en une fois par an.</p></details>
     <details class="rv"><summary>Ça marche sur Mac et Windows ?</summary><p>Oui, MatchLyz fonctionne sur Mac et sur Windows.</p></details>
     <details class="rv"><summary>Puis-je résilier quand je veux ?</summary><p>Oui. L'abonnement mensuel est sans engagement, tu peux l'arrêter à tout moment.</p></details>
   </div>
 </div></section>
+
 <footer><div class="wrap">
   <div style="margin-bottom:8px"><a href="#tarifs">Tarifs</a> · <a href="#faq">FAQ</a> · <a href="mailto:contact@matchlyz.com">contact@matchlyz.com</a></div>
   © <span id="yr"></span> MatchLyz. Tous droits réservés.
 </div></footer>
+
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
   var PRICING={
