@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatchLyz — Le logiciel d'analyse vidéo football, à prix amateur</title>
+<meta name="description" content="MatchLyz : taggez vos matchs, suivez les joueurs par IA, sortez vos stats et montez vos séquences. Application Mac & Windows. La qualité pro à 9,90 €/mois.">
+<link rel="icon" href="https://raw.githubusercontent.com/mickaeljulian10-droid/matchlyz-app/main/BANDEAU%20MATCHLYZ.png">
+<style>
+  :root{--bg:#080b0a;--card:#0e1512;--line:#1c2b25;--green:#12E58A;--txt:#eaf3ef;--mut:#9fb4ab}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Montserrat',-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;border-radius:12px;padding:15px 26px;font-size:16px;cursor:pointer;border:0;transition:.15s}
+  .btn-green{background:var(--green);color:#04140d}
+  .btn-green:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--green);color:var(--green)}
+  header{position:sticky;top:0;z-index:20;background:rgba(8,11,10,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav img{height:30px;width:auto;display:block}
+  .nav .links a{color:var(--mut);font-weight:700;font-size:14px;margin-left:22px}
+  .nav .links a:hover{color:var(--txt)}
+  .hidem{display:inline}
+  @media(max-width:720px){.hidem{display:none}}
+  .hero{text-align:center;padding:66px 0 40px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-40% 20% auto;height:520px;background:radial-gradient(closest-side,rgba(18,229,138,.16),transparent);filter:blur(30px);z-index:0}
+  .hero>*{position:relative;z-index:1}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(18,229,138,.08);border:1px solid rgba(18,229,138,.3);color:var(--green);font-weight:800;font-size:12.5px;letter-spacing:.4px;padding:7px 14px;border-radius:999px}
+  h1{font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.5px;margin:20px auto 16px;max-width:820px;font-weight:900}
+  h1 .g{color:var(--green)}
+  .sub{color:var(--mut);font-size:clamp(15px,2.4vw,19px);max-width:640px;margin:0 auto 26px}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .os{margin-top:16px;color:var(--mut);font-size:13px}
+  .banner{margin:44px auto 0;max-width:760px;width:100%;border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .allin{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;background:rgba(18,229,138,.08);border:1px solid rgba(18,229,138,.3);color:var(--green);font-weight:800;font-size:14px;padding:12px 18px;border-radius:14px;max-width:760px;margin:26px auto 0}
+  section{padding:58px 0}
+  .h2{font-size:clamp(24px,3.6vw,36px);font-weight:900;text-align:center;letter-spacing:-.4px}
+  .lead{color:var(--mut);text-align:center;max-width:620px;margin:12px auto 0}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .feat .ic{width:44px;height:44px;border-radius:12px;background:rgba(18,229,138,.12);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+  .feat h3{font-size:18px;margin-bottom:8px}
+  .feat p{color:var(--mut);font-size:14.5px}
+  .toggle{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px;margin:22px auto 0;gap:4px}
+  .toggle button{border:0;background:transparent;color:var(--mut);font-weight:800;padding:10px 22px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:15px}
+  .toggle button.on{background:var(--green);color:#04140d}
+  .toggle .save{font-size:11px;opacity:.85}
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:30px auto 0}
+  @media(max-width:720px){.plans{grid-template-columns:1fr}}
+  .plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .plan.pop{border-color:rgba(18,229,138,.55);box-shadow:0 0 0 1px rgba(18,229,138,.25),0 20px 60px rgba(0,0,0,.4)}
+  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:900;letter-spacing:1px;color:#03150e;background:var(--green);padding:5px 14px;border-radius:999px}
+  .plan h3{font-size:17px;color:var(--mut);font-weight:800}
+  .price{margin:12px 0 2px;font-weight:900}
+  .price span{font-size:44px}
+  .price small{font-size:16px;color:var(--mut);font-weight:700}
+  .cyc{color:var(--mut);font-size:13px;margin-bottom:18px}
+  .plan ul{list-style:none;margin:16px 0 22px}
+  .plan li{padding:7px 0;font-size:14.5px;color:#d7e6df;display:flex;gap:10px;align-items:flex-start}
+  .plan li::before{content:"✓";color:var(--green);font-weight:900}
+  .plan .btn{width:100%}
+  .rv{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:2px 20px;margin:12px auto;max-width:760px}
+  .rv summary{cursor:pointer;font-weight:800;padding:16px 0;list-style:none}
+  .rv summary::-webkit-details-marker{display:none}
+  .rv p{color:var(--mut);padding:0 0 16px;font-size:14.5px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:13px;text-align:center}
+  footer a{color:var(--mut)}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <img src="https://raw.githubusercontent.com/mickaeljulian10-droid/matchlyz-app/main/BANDEAU%20MATCHLYZ.png" alt="MatchLyz">
+  <div class="links">
+    <a class="hidem" href="#fonctionnalites">Fonctionnalités</a>
+    <a class="hidem" href="#tarifs">Tarifs</a>
+    <a class="hidem" href="#faq">FAQ</a>
+    <a class="btn btn-green" style="padding:10px 18px;font-size:14px" href="#tarifs">Commencer</a>
+  </div>
+</div></header>
+<div class="hero"><div class="wrap">
+  <span class="pill">🎯 Analyse vidéo · Suivi IA · Montage</span>
+  <h1>La qualité <span class="g">pro</span> de l'analyse vidéo,<br>à prix <span class="g">amateur</span>.</h1>
+  <p class="sub">Taggez vos matchs, suivez vos joueurs par IA, sortez vos statistiques et montez vos séquences — le tout dans une seule application, sur Mac et Windows.</p>
+  <div class="cta">
+    <a class="btn btn-green" href="#tarifs">Commencer — 9,90 €/mois</a>
+    <a class="btn btn-ghost" href="#fonctionnalites">Voir les fonctionnalités</a>
+  </div>
+  <div class="os">💻 Windows &amp; Mac · Essai gratuit 15 jours</div>
+  <img class="banner" src="https://raw.githubusercontent.com/mickaeljulian10-droid/matchlyz-app/main/BANDEAU%20MATCHLYZ.png" alt="MatchLyz">
+  <div class="allin">✅ Tout inclus — aucune option cachée, aucun supplément.</div>
+</div></div>
+<section id="fonctionnalites"><div class="wrap">
+  <div class="h2">Tout ce qu'il faut pour analyser comme un pro</div>
+  <p class="lead">Une seule application, du terrain au montage final.</p>
+  <div class="grid">
+    <div class="feat"><div class="ic">🏷️</div><h3>Tagging en direct</h3><p>Marquez les actions clés pendant ou après le match, avec vos propres catégories et raccourcis.</p></div>
+    <div class="feat"><div class="ic">🤖</div><h3>Suivi IA des joueurs</h3><p>Le joueur est suivi automatiquement à l'écran. Calibrage terrain manuel pour une précision parfaite.</p></div>
+    <div class="feat"><div class="ic">📐</div><h3>Terrain tactique</h3><p>Flèches, zones, courses, ronds animés — illustrez le placement et les intentions de jeu.</p></div>
+    <div class="feat"><div class="ic">📊</div><h3>Statistiques</h3><p>Sortez des rapports clairs et exploitables, prêts à partager avec le staff ou le joueur.</p></div>
+    <div class="feat"><div class="ic">🎬</div><h3>Montage &amp; export</h3><p>Assemblez vos séquences, ajoutez texte et voix off, et exportez une vidéo propre en quelques clics.</p></div>
+    <div class="feat"><div class="ic">🎙️</div><h3>Voix &amp; commentaires</h3><p>Enregistrez votre analyse à la voix directement sur chaque action, et téléchargez le clip.</p></div>
+  </div>
+</div></section>
+<section id="tarifs" style="background:linear-gradient(180deg,rgba(18,229,138,.04),transparent)"><div class="wrap" style="text-align:center">
+  <div class="h2">Un prix simple, tout inclus</div>
+  <p class="lead">La même application, sans engagement. Essaie 15 jours gratuitement.</p>
+  <div class="toggle">
+    <button id="btMonth" class="on" onclick="setCycle('month')">Mensuel</button>
+    <button id="btYear" onclick="setCycle('year')">Annuel <span class="save">· 2 mois offerts</span></button>
+  </div>
+  <div class="plans">
+    <div class="plan">
+      <h3>Essai gratuit</h3>
+      <div class="price"><span>0 €</span></div>
+      <div class="cyc">15 jours, sans carte bancaire</div>
+      <ul><li>Toutes les fonctionnalités</li><li>1 e-mail = 1 ordinateur</li><li>Aucun engagement</li></ul>
+      <a class="btn btn-ghost" href="#faq">Comment ça marche ?</a>
+    </div>
+    <div class="plan pop">
+      <div class="badge">POPULAIRE</div>
+      <h3>MatchLyz</h3>
+      <div class="price"><span data-price="pro">9,90 €</span><small data-per="pro">/mois</small></div>
+      <div class="cyc" data-cyc="pro">Facturé mensuellement, sans engagement</div>
+      <ul><li>Tagging, Suivi IA, Terrain tactique</li><li>Statistiques &amp; rapports</li><li>Montage, voix off &amp; export</li><li>Mises à jour incluses</li></ul>
+      <a class="btn btn-green" id="ctaPro" href="https://buy.stripe.com/6oU28s4qC9mobG61NAbAs0c">S'abonner</a>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:22px;font-size:13px">Après paiement, tu reçois ton code d'activation par e-mail. Tu le colles dans l'application, et c'est parti.</p>
+</div></section>
+<section id="faq"><div class="wrap">
+  <div class="h2">Questions fréquentes</div>
+  <div style="margin-top:26px">
+    <details class="rv"><summary>Comment fonctionne l'essai gratuit ?</summary><p>Tu télécharges MatchLyz, tu ouvres l'application et tu entres ton e-mail : 15 jours gratuits sont débloqués sur ton ordinateur. Un essai = un e-mail + un ordinateur.</p></details>
+    <details class="rv"><summary>Comment j'active mon abonnement ?</summary><p>Après ton paiement, tu reçois un code d'activation par e-mail. Ouvre MatchLyz, colle le code dans l'écran d'accueil, clique sur « Activer ».</p></details>
+    <details class="rv"><summary>Quelle différence entre mensuel et annuel ?</summary><p>C'est la même application. L'abonnement annuel revient moins cher (2 mois offerts) et se règle en une fois par an.</p></details>
+    <details class="rv"><summary>Ça marche sur Mac et Windows ?</summary><p>Oui, MatchLyz fonctionne sur Mac et sur Windows.</p></details>
+    <details class="rv"><summary>Puis-je résilier quand je veux ?</summary><p>Oui. L'abonnement mensuel est sans engagement, tu peux l'arrêter à tout moment.</p></details>
+  </div>
+</div></section>
+<footer><div class="wrap">
+  <div style="margin-bottom:8px"><a href="#tarifs">Tarifs</a> · <a href="#faq">FAQ</a> · <a href="mailto:contact@matchlyz.com">contact@matchlyz.com</a></div>
+  © <span id="yr"></span> MatchLyz. Tous droits réservés.
+</div></footer>
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var PRICING={
+    month:{price:'9,90 €',per:'/mois',cyc:'Facturé mensuellement, sans engagement',link:'https://buy.stripe.com/6oU28s4qC9mobG61NAbAs0c'},
+    year:{price:'99 €',per:'/an',cyc:'Facturé une fois par an (2 mois offerts)',link:'https://buy.stripe.com/bJeaEYg9kfKMd0edwibAs0d'}
+  };
+  function setCycle(c){
+    document.getElementById('btMonth').classList.toggle('on',c==='month');
+    document.getElementById('btYear').classList.toggle('on',c==='year');
+    var p=PRICING[c];
+    document.querySelector('[data-price="pro"]').textContent=p.price;
+    document.querySelector('[data-per="pro"]').textContent=p.per;
+    document.querySelector('[data-cyc="pro"]').textContent=p.cyc;
+    document.getElementById('ctaPro').href=p.link;
+  }
+  setCycle('month');
+</script>
+</body>
+</html>
