@@ -6,6 +6,10 @@
 <title>MatchLyz — L'analyse vidéo football, simple et pro</title>
 <meta name="description" content="MatchLyz : analysez vos matchs, suivez vos joueurs par IA, créez vos stats et montez vos séquences. Simple, puissant, Mac & Windows. Dès 9,90 €/mois.">
 <link rel="icon" href="https://raw.githubusercontent.com/mickaeljulian10-droid/matchlyz-app/main/BANDEAU%20MATCHLYZ.png">
+<meta property="og:title" content="MatchLyz — L'analyse vidéo football, simple et pro">
+<meta property="og:description" content="Taggez vos matchs, suivez vos joueurs par IA, créez vos stats et montez vos séquences.">
+<meta property="og:image" content="https://matchlyz.com/matchlyz-hero-poster.jpg">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -166,6 +170,15 @@
   .fcols{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:20px}
   footer a:hover{color:var(--green)}
   .legal a{color:var(--mut)}
+  /* vidéos + photos (nov. 2026) */
+  .hvis.hvid{padding:14px;background:linear-gradient(160deg,#10211a,#0A0C0C 70%);box-shadow:0 30px 70px rgba(10,40,25,.28)}
+  .hvis.hvid .float{display:none}
+  .hvid video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:16px;background:#0A0C0C;cursor:pointer}
+  .shot.pic{background:#0A0C0C;border:1px solid #1d2a24;box-shadow:0 30px 70px rgba(10,30,20,.22);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+  .shot.pic img{display:block;width:100%;height:auto;aspect-ratio:16/9}
+  .shot.pic.in:hover{transform:translateY(-6px) scale(1.012);box-shadow:0 40px 80px rgba(11,161,103,.28)}
+  .demo-vid{max-width:920px;margin:28px auto 0;border-radius:18px;overflow:hidden;background:#0A0C0C;border:1px solid #1d2a24;box-shadow:0 30px 70px rgba(16,40,30,.18)}
+  .demo-vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0A0C0C}
 </style>
 </head>
 <body>
@@ -194,26 +207,10 @@
     </div>
     <div class="note">💳 Sans carte bancaire · 15 jours gratuits · Mac &amp; Windows</div>
   </div>
-  <div class="hvis reveal">
+  <div class="hvis hvid reveal">
     <span class="float f1"><span class="e">🤖</span>Suivi IA</span>
     <span class="float f2"><span class="e">🏷️</span>Tagging temps réel</span>
-    <div class="frame">
-      <div class="fbar"><i></i><i></i><i></i></div>
-      <svg class="pitch" viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
-        <rect width="560" height="320" fill="#ffffff"/>
-        <g stroke="#cfe9dc" stroke-width="2" fill="none">
-          <rect x="26" y="24" width="508" height="272" rx="8"/><line x1="280" y1="24" x2="280" y2="296"/>
-          <circle cx="280" cy="160" r="44"/><rect x="26" y="96" width="70" height="128"/><rect x="464" y="96" width="70" height="128"/>
-        </g>
-        <polygon points="350,70 460,108 420,206 310,172" fill="rgba(18,229,138,.10)" stroke="#12E58A" stroke-width="2" class="dash"/>
-        <path d="M150 224 Q 260 112 350 146" fill="none" stroke="#0BA167" stroke-width="3.4" stroke-linecap="round" class="dash"/>
-        <polygon points="350,146 335,137 339,153" fill="#0BA167"/>
-        <g transform="translate(150,224)"><circle class="ring" r="10" fill="none" stroke="#12E58A" stroke-width="2.5"/><circle r="10" fill="#0BA167" stroke="#fff" stroke-width="2.5"/><text y="4" font-size="9" fill="#fff" text-anchor="middle" font-weight="800">10</text></g>
-        <g transform="translate(410,146)"><circle r="10" fill="#0f1a15" stroke="#fff" stroke-width="2.5"/><text y="4" font-size="9" fill="#fff" text-anchor="middle" font-weight="800">7</text></g>
-        <circle cx="280" cy="188" r="7" fill="#9fb4ab"/>
-        <circle cx="150" cy="224" r="4.5" fill="#0f1a15"/>
-      </svg>
-    </div>
+    <video id="heroVid" src="matchlyz-hero.mp4" poster="matchlyz-hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Vidéo de présentation MatchLyz" title="Voir la démo avec le son"></video>
   </div>
 </div></div>
 
@@ -251,24 +248,7 @@
       </ul>
       <a class="btn btn-dark learn" href="#tarifs">En savoir plus →</a>
     </div>
-    <div class="shot reveal">
-      
-      <div class="sb"><i></i><i></i><i></i></div>
-      <div class="body">
-        <div class="mini"><svg viewBox="0 0 520 250" style="width:100%;display:block"><rect width="520" height="250" fill="#0d1a14"/>
-          <g stroke="#1f3a2d" stroke-width="2" fill="none"><rect x="16" y="14" width="488" height="222" rx="6"/><line x1="260" y1="14" x2="260" y2="236"/><circle cx="260" cy="125" r="34"/></g>
-          <path d="M120 180 Q 230 90 330 120" fill="none" stroke="#12E58A" stroke-width="3" class="dash"/>
-          <g transform="translate(120,180)"><circle class="ring" r="9" fill="none" stroke="#12E58A" stroke-width="2.5"/><circle r="9" fill="#0BA167" stroke="#fff" stroke-width="2"/></g>
-          <g transform="translate(330,120)"><circle r="9" fill="#0f1a15" stroke="#fff" stroke-width="2"/></g>
-        </svg></div>
-        <div style="display:flex;gap:6px;margin-top:10px">
-          <span style="flex:2;height:22px;border-radius:5px;background:rgba(18,229,138,.2)"></span>
-          <span style="flex:1;height:22px;border-radius:5px;background:#eef2f0"></span>
-          <span style="flex:1.4;height:22px;border-radius:5px;background:rgba(245,181,61,.25)"></span>
-          <span style="flex:1;height:22px;border-radius:5px;background:#eef2f0"></span>
-        </div>
-      </div>
-    </div>
+    <div class="shot pic reveal"><img src="shot-tag.jpg" alt="Interface de tagging MatchLyz : tag des actions en 1 clic" width="1440" height="810" loading="lazy" decoding="async"></div>
   </div>
 
   <div class="frow rev">
@@ -284,17 +264,7 @@
       </ul>
       <a class="btn btn-dark learn" href="#tarifs">En savoir plus →</a>
     </div>
-    <div class="shot reveal">
-      
-      <div class="sb"><i></i><i></i><i></i></div>
-      <div class="body"><div class="mini"><svg viewBox="0 0 520 250" style="width:100%;display:block"><rect width="520" height="250" fill="#0d1a14"/>
-        <g stroke="#1f3a2d" stroke-width="2" fill="none"><rect x="16" y="14" width="488" height="222" rx="6"/><line x1="260" y1="14" x2="260" y2="236"/><circle cx="260" cy="125" r="34"/></g>
-        <path d="M110 190 Q 230 70 340 110" fill="none" stroke="#7fd7ff" stroke-width="3" class="dash"/>
-        <g transform="translate(110,190)"><circle class="ring" r="9" fill="none" stroke="#12E58A" stroke-width="2.5"/><circle r="10" fill="#0BA167" stroke="#fff" stroke-width="2"/><text y="4" font-size="9" fill="#fff" text-anchor="middle" font-weight="800">10</text></g>
-        <g transform="translate(340,110)"><circle r="10" fill="#0f1a15" stroke="#7fd7ff" stroke-width="2.5"/><text y="4" font-size="9" fill="#7fd7ff" text-anchor="middle" font-weight="800">7</text></g>
-        <g transform="translate(420,170)"><circle r="10" fill="#0f1a15" stroke="#ff6b6b" stroke-width="2.5"/><text y="4" font-size="9" fill="#ff6b6b" text-anchor="middle" font-weight="800">4</text></g>
-      </svg></div></div>
-    </div>
+    <div class="shot pic reveal"><img src="shot-suivi-ia.jpg" alt="Suivi IA des joueurs avec vitesse en direct" width="1440" height="810" loading="lazy" decoding="async"></div>
   </div>
 
   <div class="frow">
@@ -310,19 +280,7 @@
       </ul>
       <a class="btn btn-dark learn" href="#tarifs">En savoir plus →</a>
     </div>
-    <div class="shot reveal">
-      
-      <div class="sb"><i></i><i></i><i></i></div>
-      <div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div class="mini" style="background:#0d1a14"><svg viewBox="0 0 230 150" style="width:100%;display:block"><rect width="230" height="150" fill="#0d1a14"/>
-          <rect x="22" y="92" width="26" height="46" rx="3" fill="#12E58A"/><rect x="60" y="60" width="26" height="78" rx="3" fill="#12E58A" opacity=".8"/><rect x="98" y="104" width="26" height="34" rx="3" fill="#7fd7ff"/><rect x="136" y="42" width="26" height="96" rx="3" fill="#f5b53d"/><rect x="174" y="78" width="26" height="60" rx="3" fill="#12E58A" opacity=".6"/>
-        </svg></div>
-        <div class="mini" style="background:#0d1a14"><svg viewBox="0 0 230 150" style="width:100%;display:block"><rect width="230" height="150" fill="#0d1a14"/>
-          <g stroke="#1f3a2d" stroke-width="1.5" fill="none"><rect x="12" y="12" width="206" height="126" rx="5"/><line x1="115" y1="12" x2="115" y2="138"/></g>
-          <ellipse cx="80" cy="70" rx="34" ry="26" fill="#ff6b6b" opacity=".5"/><ellipse cx="155" cy="95" rx="26" ry="20" fill="#f5b53d" opacity=".55"/><ellipse cx="120" cy="60" rx="18" ry="14" fill="#12E58A" opacity=".55"/>
-        </svg></div>
-      </div>
-    </div>
+    <div class="shot pic reveal"><img src="shot-dessin-stats.jpg" alt="Arrêt sur image avec dessin sur l'action et rapport statistique" width="1440" height="810" loading="lazy" decoding="async"></div>
   </div>
 
   <div class="frow rev">
@@ -338,15 +296,7 @@
       </ul>
       <a class="btn btn-dark learn" href="#tarifs">En savoir plus →</a>
     </div>
-    <div class="shot reveal">
-      
-      <div class="sb"><i></i><i></i><i></i></div>
-      <div class="body"><div class="mini" style="background:#0d1a14;padding:14px">
-        <div style="display:flex;gap:6px;margin-bottom:8px"><span style="flex:2;height:20px;border-radius:5px;background:rgba(18,229,138,.25)"></span><span style="flex:1;height:20px;border-radius:5px;background:#17241d"></span><span style="flex:1.5;height:20px;border-radius:5px;background:rgba(245,181,61,.3)"></span></div>
-        <div style="display:flex;gap:6px;margin-bottom:8px"><span style="flex:1;height:20px;border-radius:5px;background:rgba(127,215,255,.3)"></span><span style="flex:2;height:20px;border-radius:5px;background:rgba(18,229,138,.25)"></span><span style="flex:1;height:20px;border-radius:5px;background:#17241d"></span></div>
-        <div style="display:flex;gap:6px"><span style="flex:1;height:20px;border-radius:5px;background:#17241d"></span><span style="flex:1;height:20px;border-radius:5px;background:rgba(245,181,61,.3)"></span><span style="flex:2;height:20px;border-radius:5px;background:rgba(18,229,138,.25)"></span></div>
-      </div></div>
-    </div>
+    <div class="shot pic reveal"><img src="shot-montage.jpg" alt="Montage vidéo MatchLyz avec timeline et export MP4" width="1440" height="810" loading="lazy" decoding="async"></div>
   </div>
 
 </div></section>
@@ -355,12 +305,8 @@
 <section id="demo" style="background:var(--alt)"><div class="wrap center-h">
   <div class="ey reveal">Démo</div>
   <div class="h2 reveal" style="margin-top:10px">Voyez MatchLyz en action</div>
-  <p class="lead reveal">90 secondes : du match brut à la séquence taggée, analysée et montée.</p>
-  <div class="reveal" style="max-width:920px;margin:28px auto 0;aspect-ratio:16/9;border-radius:18px;border:1px dashed var(--green);background:var(--mint);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-    <div style="width:76px;height:76px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px">▶</div>
-    <b style="color:var(--ink)">Vidéo de démonstration </b>
-    <small style="color:var(--mut);max-width:420px">Bientôt disponible.</small>
-  </div>
+  <p class="lead reveal">30 secondes pour découvrir MatchLyz : tagging, suivi IA, dessin, stats et montage.</p>
+  <div class="demo-vid reveal"><video id="demoVid" src="matchlyz-demo.mp4" poster="matchlyz-demo-poster.jpg" controls playsinline preload="metadata" aria-label="Démo MatchLyz"></video></div>
 </div></section>
 
 <!-- WHO -->
@@ -451,6 +397,15 @@
   setCycle('month');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script>
+(function(){
+  var d=document.getElementById('demoVid'),h=document.getElementById('heroVid');
+  if(!d) return;
+  function go(e){ if(e) e.preventDefault(); document.getElementById('demo').scrollIntoView({behavior:'smooth'}); try{ d.muted=false; d.currentTime=0; var p=d.play(); if(p&&p.catch)p.catch(function(){}); }catch(_){} }
+  document.querySelectorAll('a[href="#demo"]').forEach(function(a){ a.addEventListener('click',go); });
+  if(h) h.addEventListener('click',go);
+})();
 </script>
 </body>
 </html>
