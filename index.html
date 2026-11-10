@@ -179,6 +179,40 @@
   .shot.pic.in:hover{transform:translateY(-6px) scale(1.012);box-shadow:0 40px 80px rgba(11,161,103,.28)}
   .demo-vid{max-width:920px;margin:28px auto 0;border-radius:18px;overflow:hidden;background:#0A0C0C;border:1px solid #1d2a24;box-shadow:0 30px 70px rgba(16,40,30,.18)}
   .demo-vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0A0C0C}
+  /* HERO grand format vidéo (façon Once) */
+  .hero.hero2{position:relative;margin-top:-66px;padding:122px 0 64px;color:#fff;overflow:hidden;
+    background:radial-gradient(ellipse 60% 75% at 74% 48%,rgba(20,240,154,.17),transparent 62%),radial-gradient(ellipse 45% 55% at 8% 95%,rgba(20,240,154,.09),transparent 60%),#0A0C0C}
+  .h2grid{position:relative;display:grid;grid-template-columns:minmax(300px,410px) minmax(0,1fr);gap:46px;align-items:center;padding-left:max(24px,calc((100vw - 1160px)/2 + 24px))}
+  .hero2 h1{color:#fff;font-size:clamp(36px,4.1vw,58px)}
+  .hero2 h1 .g{color:#14F09A}
+  .hero2 .sub{color:rgba(255,255,255,.72);font-size:clamp(15.5px,1.35vw,18px)}
+  .hero2 .pill{background:rgba(20,240,154,.1);border-color:rgba(20,240,154,.35);color:#14F09A}
+  .hero2 .note{color:rgba(255,255,255,.55)}
+  .hero2 .btn-green{background:#14F09A;color:#0A0C0C;box-shadow:0 12px 34px rgba(20,240,154,.28)}
+  .hero2 .btn-green:hover{background:#00DE8A}
+  .hero2 .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+  .hero2 .btn-ghost:hover{border-color:#14F09A;color:#14F09A}
+  .hero2 .cta{gap:10px;flex-wrap:nowrap}
+  .hero2 .cta .btn{padding:14px 18px;font-size:14.5px}
+  @media(max-width:420px){.hero2 .cta{flex-wrap:wrap}}
+  .hmedia{position:relative;border-radius:30px 0 0 30px;overflow:hidden;background:#0A0C0C;border:1px solid rgba(20,240,154,.45);border-right:0;box-shadow:0 30px 90px rgba(0,0,0,.55),0 0 70px rgba(20,240,154,.16)}
+  .hmedia video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0A0C0C;cursor:pointer}
+  .hplay{position:absolute;left:26px;bottom:26px;display:flex;align-items:center;gap:14px;background:rgba(10,12,12,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(20,240,154,.55);color:#fff;border-radius:999px;padding:9px 24px 9px 9px;font-family:inherit;cursor:pointer;transition:transform .2s,opacity .25s,border-color .2s;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+  .hplay:hover{transform:translateY(-2px) scale(1.03);border-color:#14F09A}
+  .hp-ic{position:relative;width:60px;height:60px;border-radius:50%;background:#14F09A;display:flex;align-items:center;justify-content:center;flex:none}
+  .hp-ic::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid #14F09A;animation:hpPulse 1.8s ease-out infinite}
+  @keyframes hpPulse{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+  .hp-ic svg{width:24px;height:24px;margin-left:3px;fill:#0A0C0C}
+  .hp-t{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2;text-align:left}
+  .hp-t b{font-weight:900;font-size:17px;letter-spacing:.2px}
+  .hp-t small{font-size:12.5px;color:rgba(255,255,255,.65);font-weight:600;margin-top:3px}
+  .hmedia.playing .hplay{opacity:0;pointer-events:none;transform:scale(.9)}
+  @media(max-width:900px){
+    .hero.hero2{padding:104px 0 44px}
+    .h2grid{grid-template-columns:1fr;gap:30px;padding:0 16px;text-align:center}
+    .hmedia{border-radius:20px;border-right:1px solid rgba(20,240,154,.45)}
+    .hplay{left:12px;bottom:12px;padding:6px 16px 6px 6px;gap:10px}.hp-ic{width:44px;height:44px}.hp-ic svg{width:18px;height:18px}.hp-t b{font-size:14.5px}.hp-t small{display:none}
+  }
 </style>
 </head>
 <body>
@@ -196,21 +230,20 @@
 </div></header>
 
 <!-- HERO -->
-<div class="hero"><div class="wrap hgrid">
-  <div class="reveal">
+<div class="hero hero2"><div class="h2grid">
+  <div class="htxt reveal">
     <span class="pill">⚽ Analyse vidéo · Suivi IA · Montage</span>
-    <h1>Analysez.<br>Progressez. <span class="g">Gagnez.</span></h1>
+    <h1>Analysez.<br>Progressez.<br><span class="g">Gagnez.</span></h1>
     <p class="sub">MatchLyz, le logiciel d'analyse vidéo football tout-en-un : taggez vos matchs, suivez vos joueurs par IA, créez vos stats et montez vos séquences. Simple, puissant, sur Mac &amp; Windows.</p>
     <div class="cta">
       <a class="btn btn-green" href="#tarifs">Commencer l'essai gratuit</a>
-      <a class="btn btn-ghost" href="#demo">▶ Voir la démo</a>
+      <a class="btn btn-ghost" id="heroDemoBtn" href="#demo">▶ Voir la vidéo</a>
     </div>
     <div class="note">💳 Sans carte bancaire · 15 jours gratuits · Mac &amp; Windows</div>
   </div>
-  <div class="hvis hvid reveal">
-    <span class="float f1"><span class="e">🤖</span>Suivi IA</span>
-    <span class="float f2"><span class="e">🏷️</span>Tagging temps réel</span>
-    <video id="heroVid" src="matchlyz-hero.mp4?v=2" poster="matchlyz-hero-poster.jpg?v=2" autoplay muted loop playsinline preload="auto" aria-label="Vidéo de présentation MatchLyz" title="Voir la démo avec le son"></video>
+  <div class="hmedia reveal" id="heroBox">
+    <video id="heroVid" src="matchlyz-demo.mp4?v=2" poster="matchlyz-cover.jpg?v=3" preload="metadata" playsinline aria-label="Vidéo de présentation MatchLyz"></video>
+    <button class="hplay" id="heroPlay" type="button" aria-label="Lancer la vidéo"><span class="hp-ic"><svg viewBox="0 0 24 24"><polygon points="7,4 20,12 7,20"/></svg></span><span class="hp-t"><b>Regarder la vidéo</b><small>30 secondes · avec le son</small></span></button>
   </div>
 </div></div>
 
@@ -400,11 +433,25 @@
 </script>
 <script>
 (function(){
-  var d=document.getElementById('demoVid'),h=document.getElementById('heroVid');
-  if(!d) return;
-  function go(e){ if(e) e.preventDefault(); document.getElementById('demo').scrollIntoView({behavior:'smooth'}); try{ d.muted=false; d.currentTime=0; var p=d.play(); if(p&&p.catch)p.catch(function(){}); }catch(_){} }
-  document.querySelectorAll('a[href="#demo"]').forEach(function(a){ a.addEventListener('click',go); });
-  if(h) h.addEventListener('click',go);
+  var d=document.getElementById('demoVid'),h=document.getElementById('heroVid'),box=document.getElementById('heroBox'),hb=document.getElementById('heroPlay'),hd=document.getElementById('heroDemoBtn');
+  function playHero(e){
+    if(e&&e.preventDefault) e.preventDefault();
+    if(!h) return;
+    if(d&&!d.paused) d.pause();
+    if(!box.classList.contains('playing')){ try{h.currentTime=0;}catch(_){} }
+    box.classList.add('playing'); h.controls=true; h.muted=false;
+    var p=h.play(); if(p&&p.catch) p.catch(function(){ h.muted=true; h.play().catch(function(){}); });
+    if(e&&e.currentTarget===hd) box.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  if(hb) hb.addEventListener('click',playHero);
+  if(hd) hd.addEventListener('click',playHero);
+  if(h){
+    h.addEventListener('click',function(e){ if(!box.classList.contains('playing')) playHero(e); });
+    h.addEventListener('ended',function(){ box.classList.remove('playing'); h.controls=false; h.load(); });
+  }
+  function goDemo(e){ e.preventDefault(); if(h&&!h.paused) h.pause(); document.getElementById('demo').scrollIntoView({behavior:'smooth'}); if(d){ try{ d.muted=false; d.currentTime=0; var p=d.play(); if(p&&p.catch)p.catch(function(){}); }catch(_){} } }
+  document.querySelectorAll('a[href="#demo"]').forEach(function(a){ if(a!==hd) a.addEventListener('click',goDemo); });
+  if(d) d.addEventListener('play',function(){ if(h&&!h.paused) h.pause(); });
 })();
 </script>
 </body>
